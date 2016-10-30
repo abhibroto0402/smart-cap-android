@@ -1,0 +1,7 @@
+#Sat Oct 29 22:56:53 CDT 2016
+base.0=/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2a20680b622f568d6d08453a8ad848ce94a344da
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e9902a1345859c609a8a477c495da17d261775a/classes.dex
+base.1=/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e9902a1345859c609a8a477c495da17d261775a
+file.0=/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2a20680b622f568d6d08453a8ad848ce94a344da/classes.dex
