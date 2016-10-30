@@ -11,7 +11,7 @@
     tools:context="com.home.smartcap.HomeActivity">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
@@ -24,7 +24,7 @@
 
     <Button
         android:text="Login"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="71dp"
         android:id="@+id/Login"
@@ -37,7 +37,7 @@
         android:layout_alignEnd="@+id/password" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
