@@ -2,50 +2,65 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_home"
+    tools:context="com.home.smartcap.HomeActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.home.smartcap.HomeActivity">
-
-    <EditText
-        android:layout_width="wrap_content"
+    android:theme="@style/AppTheme">
+    <RelativeLayout
+        android:background="@drawable/login_page_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="160dp">
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_marginTop="81dp"
-        android:id="@+id/password"
-        android:hint="Password"
-        android:layout_below="@+id/emailId"
-        android:layout_alignLeft="@+id/emailId"
-        android:layout_alignStart="@+id/emailId" />
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40dp"
+        android:background="#F8F8FF"
+        android:radius="10dip">
 
-    <Button
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
-        android:id="@+id/Login"
-        style="@style/Widget.AppCompat.Button"
-        android:visibility="visible"
-        android:layout_below="@+id/password"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_alignEnd="@+id/password" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/emailId"
+            android:hint="Email"
+            android:fontFamily="monospace"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_marginTop="98dp"
-        android:id="@+id/emailId"
-        android:hint="Email"
-        android:fontFamily="sans-serif"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/password"
+            android:hint="Password"
+            android:layout_below="@+id/emailId"
+            android:layout_alignLeft="@+id/emailId"
+            android:layout_alignStart="@+id/emailId"
+            android:fontFamily="monospace" />
 
+        <Button
+            android:text="Login"
+            android:background="#318CE7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Login"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.AppCompat.Button"
+            android:visibility="visible"
+            android:layout_below="@+id/password"
+            android:layout_alignLeft="@+id/password"
+            android:layout_alignStart="@+id/password"
+            android:layout_alignRight="@+id/password"
+            android:layout_alignEnd="@+id/password" />
+    </RelativeLayout>
 </RelativeLayout>

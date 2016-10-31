@@ -48,12 +48,12 @@
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_action_tombstone.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
