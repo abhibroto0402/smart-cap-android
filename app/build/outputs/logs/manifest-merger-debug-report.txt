@@ -48,12 +48,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:15:17-77
 	android:name
 		ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:15:27-74
-activity#com.home.smartcap.HomeActivity
+activity#com.home.smartcap.SignUpActivity
 ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:18:9-20:39
 	android:label
 		ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:19:13-41
+		ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:19:13-43
 uses-sdk
 INJECTED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:21:5-23:78

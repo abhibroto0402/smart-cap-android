@@ -20,10 +20,6 @@
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/activity_home.xml",
-        "source": "/Users/amukherjee/Documents/SmartCap/app/src/main/res/layout/activity_home.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_popup_menu_header_item_layout.xml"
     },
@@ -118,6 +114,10 @@
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/activity_signup.xml",
+        "source": "/Users/amukherjee/Documents/SmartCap/app/src/main/res/layout/activity_signup.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",

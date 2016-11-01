@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.home.smartcap.HomeActivity"
+            android:name="com.home.smartcap.SignUpActivity"
             android:label="SmartCap" />
     </application>
 

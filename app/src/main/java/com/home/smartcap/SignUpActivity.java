@@ -4,20 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by amukherjee on 10/30/16.
  */
 
-public class HomeActivity extends AppCompatActivity{
-    private Button gotoLogin = null;
+public class SignUpActivity extends AppCompatActivity{
+    private TextView gotoLogin = null;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_home);
+            setContentView(R.layout.activity_signup);
 
-            gotoLogin= (Button) findViewById(R.id.gotologin);
+            gotoLogin= (TextView) findViewById(R.id.gotologin);
 
             gotoLogin.setOnClickListener(new View.OnClickListener(){
                 @Override
