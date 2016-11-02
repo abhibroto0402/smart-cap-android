@@ -13,6 +13,10 @@ ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /Users/amukherjee/Documents/SmartCap/app/src/main/AndroidManifest.xml:5:5-22:19
 MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:25:5-20
