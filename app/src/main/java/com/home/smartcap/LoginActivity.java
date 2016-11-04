@@ -83,7 +83,11 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     private void showMessage(){
-        Toast.makeText(this, result,Toast.LENGTH_SHORT).show();
+        if(result.equals("200"))
+            Toast.makeText(this, result+": Login Successful",Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, result+": Not able to Login at this time. Please try again",Toast.LENGTH_SHORT).show();
+
     }
 
     public class AuthenticationLogin extends AsyncTask<String, String, String>{
