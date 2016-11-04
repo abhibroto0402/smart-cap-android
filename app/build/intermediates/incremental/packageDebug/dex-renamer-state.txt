@@ -1,4 +1,4 @@
-#Thu Nov 03 17:55:34 CDT 2016
+#Thu Nov 03 22:17:53 CDT 2016
 base.0=/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2a20680b622f568d6d08453a8ad848ce94a344da
 renamed.1=classes.dex
 renamed.0=classes2.dex

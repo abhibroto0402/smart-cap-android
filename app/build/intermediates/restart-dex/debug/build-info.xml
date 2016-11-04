@@ -5,40 +5,39 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="145493066576446"
+    timestamp="153505379443915"
     token="-4865705604006455025"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="82" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="21" />
+        duration="0" />
     <task
         name="verifier"
-        duration="1" />
-
-    <artifact
-        location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-        type="DEX" />
+        duration="0" />
 
     <build
-        timestamp="135258599994775"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="151002035442806"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="145493066576446"
+        timestamp="153300691955490"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
+    <build
+        timestamp="153505379443915"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

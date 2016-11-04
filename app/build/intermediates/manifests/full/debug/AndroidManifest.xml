@@ -27,6 +27,9 @@
         <activity
             android:name="com.home.smartcap.SignUpActivity"
             android:label="SmartCap" />
+        <activity
+            android:name="com.home.smartcap.HomeActivity"
+            android:label="SmartCap" />
     </application>
 
 </manifest>
