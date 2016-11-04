@@ -38,7 +38,7 @@ public class SignUpActivity extends AppCompatActivity{
     private EditText sign_password= null;
     private Button create_account= null;
     private String emailId, pswd, user_name;
-    private String post_result;
+    private String post_result="blank";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +92,10 @@ public class SignUpActivity extends AppCompatActivity{
     }
 
     private void showMessage(){
-        if(post_result.equals("200"))
-            Toast.makeText(this, post_result+": Account Creation Successful",Toast.LENGTH_SHORT).show();
+        if(post_result!="blank")
+            Toast.makeText(this, post_result,Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(this, post_result+": Not able to create account at this time. Please try again",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Account Created",Toast.LENGTH_SHORT).show();
     }
 
     private class CreateAccount extends AsyncTask<String, String, String>{
@@ -145,9 +145,17 @@ public class SignUpActivity extends AppCompatActivity{
         }
 
         @Override
-        protected void onPostExecute(String s){
+        protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            post_result= s;
+            try {
+                if (post_result=="blank" || s.equals("200") )
+                    post_result = "Account Creation Successful";
+                else
+                    post_result = "Account Creation Failed";
+            }catch (NullPointerException e){
+                post_result = "Could not create account. Try Again";
+            }
         }
+
     }
 }

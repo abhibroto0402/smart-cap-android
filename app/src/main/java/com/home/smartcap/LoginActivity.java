@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity{
     private EditText password;
     private String emailId, pswd;
     private boolean isValid=false;
-    private String result;
+    private String result="blank";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +65,6 @@ public class LoginActivity extends AppCompatActivity{
                     String tempUrl= "https://smartcap-abhibroto0402.c9users.io/user/"+emailId+"/"+pswd;
                     for(int i=0; i<2;i++) {
                         new AuthenticationLogin().execute(tempUrl);
-
                     }
                     showMessage();
                 }
@@ -83,11 +82,8 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     private void showMessage(){
-        if(result.equals("200"))
-            Toast.makeText(this, result+": Login Successful",Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(this, result+": Not able to Login at this time. Please try again",Toast.LENGTH_SHORT).show();
-
+        if(result!="blank")
+            Toast.makeText(this, result,Toast.LENGTH_SHORT).show();
     }
 
     public class AuthenticationLogin extends AsyncTask<String, String, String>{
@@ -109,7 +105,7 @@ public class LoginActivity extends AppCompatActivity{
                 if(conn.getResponseCode()==200)
                     return "200";
                 else
-                    return "400";
+                    return result.toString();
             }catch(Exception e){
                 return null;
             }
@@ -118,7 +114,14 @@ public class LoginActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(String s){
             super.onPostExecute(s);
-            result = s;
+            try {
+                if (result=="blank" || s== "200")
+                    result = "Login Successful";
+                else
+                    result = "Login Failure. Try again";
+            }catch (NullPointerException e){
+                result = "Login Failed";
+            }
         }
     }
 }
