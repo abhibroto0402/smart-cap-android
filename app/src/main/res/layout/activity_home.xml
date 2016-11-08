@@ -14,8 +14,8 @@
         android:layout_height="70dp"
         android:gravity="bottom"
         android:layout_alignParentBottom="true"
-        android:weightsum="4"
-        android:background="#555555">
+        android:weightSum="4"
+        android:background="#D6D7D7">
 
         <ImageButton
             android:id="@+id/timer"
