@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E4E2">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/jsonbody"/>
+        android:id="@+id/jsonbody"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:weightsum="4"
+        android:background="#555555">
+
+        <ImageButton
+            android:id="@+id/timer"
+            android:src="@drawable/timer_icon"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+        <ImageButton
+            android:id="@+id/temperature"
+            android:layout_weight="1"
+            android:layout_alignRight="@+id/timer"
+            android:src="@drawable/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+        <ImageButton
+            android:id="@+id/humidity"
+            android:layout_weight="1"
+            android:layout_alignRight="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/humidity"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+        <ImageButton
+            android:id="@+id/prescription"
+            android:layout_weight="1"
+            android:layout_alignRight="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/pill"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
