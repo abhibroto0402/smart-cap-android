@@ -5,7 +5,7 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="349961605645467"
+    timestamp="411448843216308"
     token="-4865705604006455025"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,10 +22,6 @@
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
-
     <build
         timestamp="348959422922504"
         verifier="FULL_BUILD_REQUESTED" >
@@ -34,11 +30,24 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="349961605645467"
+        timestamp="410632772787728"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
             type="RESOURCES" />
+        <artifact
+            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
     </build>
+    <build
+        timestamp="411365719443156"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="411448843216308"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

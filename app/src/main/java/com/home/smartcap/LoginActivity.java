@@ -63,10 +63,9 @@ public class LoginActivity extends AppCompatActivity {
                     isValid = true;
                 }
                 if (isValid) {
-                    String tempUrl = "https://smartcap-abhibroto0402.c9users.io/user/" + emailId + "/" + pswd;
-                    for (int i = 0; i < 2; i++) {
+                    String tempUrl = ServerUtil.getUsersEndpoint(emailId,pswd);
+                    for(int i = 0; i<2 ;i++)
                         new AuthenticationLogin().execute(tempUrl);
-                    }
                     showMessage();
                     if (jsonData != "Testing") {
                         Intent i = new Intent(view.getContext(), HomeActivity.class);
@@ -110,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 rd.close();
                 if (conn.getResponseCode() == 200) {
-                    url = new URL("https://smartcap-abhibroto0402.c9users.io/patient/" + emailId);
+                    url = new URL(ServerUtil.getPatientEndpoint(emailId));
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
                     conn.connect();
@@ -127,6 +126,7 @@ public class LoginActivity extends AppCompatActivity {
                 return null;
             }
         }
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);

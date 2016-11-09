@@ -3,12 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E5E4E2">
-    <TextView
+    <RelativeLayout
+        android:id="@+id/outerlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/jsonbody"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"/>
+        android:layout_height="70dp"
+        android:background="#D6D7D7">
+        <ImageButton
+            android:id="@+id/refresh"
+            android:src="@drawable/refresh"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jsonbody"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+        </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -16,7 +35,6 @@
         android:layout_alignParentBottom="true"
         android:weightSum="4"
         android:background="#D6D7D7">
-
         <ImageButton
             android:id="@+id/timer"
             android:src="@drawable/timer_icon"
@@ -60,8 +78,5 @@
             android:scaleType="fitCenter"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"/>
-
     </LinearLayout>
-
-
 </RelativeLayout>
