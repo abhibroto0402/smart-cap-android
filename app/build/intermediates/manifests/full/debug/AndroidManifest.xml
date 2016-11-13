@@ -30,6 +30,9 @@
         <activity
             android:name="com.home.smartcap.HomeActivity"
             android:label="SmartCap" />
+        <activity
+            android:name="com.home.smartcap.AddPrescription"
+            android:label="SmartCap" />
     </application>
 
 </manifest>

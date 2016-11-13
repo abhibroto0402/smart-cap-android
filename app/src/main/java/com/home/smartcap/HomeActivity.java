@@ -1,5 +1,6 @@
 package com.home.smartcap;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView tv;// TODO - Need to make this ListView
     private ImageButton _refresh;
     private String jsonBody, emailId, user_json;
+    private ImageButton _addPrescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         //Initialize all values
         jsonBody = extras.getString("jsonData");
         emailId = extras.getString("emailId");
-        user_json= extras.getString("user_json");//TODO Use this data to send in POST EndPoint
+        user_json= extras.getString("user_json");
         if (jsonBody != null && jsonBody != "Testing") {
             tv.setText(jsonBody);
         } else {
@@ -45,6 +47,16 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+            }
+        });
+
+        _addPrescription = (ImageButton) findViewById(R.id.prescription);
+        _addPrescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pres = new Intent(view.getContext(), AddPrescription.class);
+                pres.putExtra("user_json", user_json);
+                startActivity(pres);
             }
         });
     }

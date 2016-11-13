@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/medname"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:hint="Medicine Name"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/smartcapnum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/medname"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:hint="SmartCap# (Optional)"
+            android:padding="10dp"/>
+        <EditText
+            android:id="@+id/expdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/smartcapnum"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:hint="Expiry Date (mm/dd/yyyy)"
+            android:padding="10dp"/>
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expdata"
+        android:id="@+id/mealstatictext"
+        android:layout_margin="5dp"
+        android:text="Meal:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+        <RadioGroup
+            android:id="@+id/meal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expdata"
+            android:layout_toRightOf="@+id/mealstatictext"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Before"/>
+            <RadioButton
+                android:id="@+id/after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/before"
+                android:checked="true"
+                android:text="After"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal"
+            android:id="@+id/dosagestatic"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Daily Dosage:"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"/>
+        <RadioGroup
+            android:id="@+id/dosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/dosagestatic"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/once"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Once"/>
+            <RadioButton
+                android:id="@+id/twice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/once"
+                android:layout_marginRight="5dp"
+                android:text="Twice"/>
+            <RadioButton
+                android:id="@+id/thrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/twice"
+                android:text="Thrice"
+                android:checked="true"/>
+        </RadioGroup>
+        <Button
+            android:text="Add Prescription"
+            android:background="#DE3163"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.AppCompat.Button"
+            android:visibility="visible"
+            android:layout_below="@+id/dosage"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Add New Prescription"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:gravity="center"
+        android:id="@+id/headerAddPres"
+        android:fontFamily="cursive"
+        android:textSize="35sp" />
+</RelativeLayout>

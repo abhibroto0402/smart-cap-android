@@ -5,39 +5,50 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="602753019336653"
+    timestamp="620746079228910"
     token="-4865705604006455025"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="242" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="29" />
     <task
         name="verifier"
-        duration="0" />
+        duration="3" />
+
+    <artifact
+        location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="485237293865255"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="617693782630591"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="594014057567304"
+        timestamp="620682841399514"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="620746079228910"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
-    <build
-        timestamp="602753019336653"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
