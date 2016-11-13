@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private String jsonData = "Testing";
     private boolean isValid = false;
     private String result = "blank";
+    private String user_json=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent i = new Intent(view.getContext(), HomeActivity.class);
                         i.putExtra("jsonData", jsonData);
                         i.putExtra("emailId", emailId);
+                        i.putExtra("user_json", user_json);
                         startActivity(i);
                     }
                 } else
@@ -107,6 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                 while ((line = rd.readLine()) != null) {
                     result.append(line);
                 }
+                user_json= result.toString();
                 rd.close();
                 if (conn.getResponseCode() == 200) {
                     url = new URL(ServerUtil.getPatientEndpoint(emailId));
