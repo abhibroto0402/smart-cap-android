@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private TextView tv;// TODO - Need to make this ListView
     private ImageButton _refresh;
-    private String jsonBody, emailId;
+    private String jsonBody, emailId, user_json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         //Initialize all values
         jsonBody = extras.getString("jsonData");
         emailId = extras.getString("emailId");
+        user_json= extras.getString("user_json");//TODO Use this data to send in POST EndPoint
         if (jsonBody != null && jsonBody != "Testing") {
             tv.setText(jsonBody);
         } else {
