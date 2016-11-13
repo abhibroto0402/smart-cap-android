@@ -111,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity{
             StringBuilder result = new StringBuilder();
             JSONObject parent = new JSONObject();
             try {
-                parent.put("user_name",user_name);
+                parent.put("name",user_name);
                 parent.put("email",emailId);
                 parent.put("password",pswd);
                 parent.put("phone",phone);
