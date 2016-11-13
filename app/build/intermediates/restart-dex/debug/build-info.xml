@@ -5,7 +5,7 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="411448843216308"
+    timestamp="602753019336653"
     token="-4865705604006455025"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -23,31 +23,21 @@
         duration="0" />
 
     <build
-        timestamp="348959422922504"
+        timestamp="485237293865255"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="410632772787728"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="411365719443156"
+        timestamp="594014057567304"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="411448843216308"
+        timestamp="602753019336653"
         verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

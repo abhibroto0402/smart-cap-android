@@ -40,6 +40,20 @@
             android:layout_below="@+id/name"
             android:layout_alignLeft="@+id/name"
             android:layout_alignStart="@+id/name" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/phone"
+            android:hint="Phone #"
+            android:fontFamily="monospace"
+            android:layout_below="@+id/emailid"
+            android:layout_alignLeft="@+id/emailid"
+            android:layout_alignStart="@+id/emailid" />
 
         <EditText
             android:layout_width="match_parent"
@@ -50,9 +64,9 @@
             android:layout_marginBottom="10dp"
             android:id="@+id/password"
             android:hint="Password"
-            android:layout_below="@+id/emailid"
-            android:layout_alignLeft="@+id/emailid"
-            android:layout_alignStart="@+id/emailid"
+            android:layout_below="@+id/phone"
+            android:layout_alignLeft="@+id/phone"
+            android:layout_alignStart="@+id/phone"
             android:fontFamily="monospace" />
 
         <Button

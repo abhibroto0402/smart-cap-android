@@ -36,8 +36,9 @@ public class SignUpActivity extends AppCompatActivity{
     private EditText sign_name= null;
     private EditText sign_email= null;
     private EditText sign_password= null;
+    private EditText sign_phone=null;
     private Button create_account= null;
-    private String emailId, pswd, user_name;
+    private String emailId, pswd, user_name, phone;
     private String post_result="blank";
 
         @Override
@@ -50,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity{
             sign_email= (EditText) findViewById(emailid) ;
             sign_password = (EditText) findViewById(R.id.password) ;
             create_account = (Button) findViewById(R.id.createAccount) ;
+            sign_phone = (EditText) findViewById(R.id.phone);
 
 
             gotoLogin.setOnClickListener(new View.OnClickListener(){
@@ -66,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity{
                     user_name= sign_name.getText().toString();
                     emailId= sign_email.getText().toString();
                     pswd= sign_password.getText().toString();
+                    phone = sign_phone.getText().toString();
                     boolean isValid = false;
 
 
@@ -111,6 +114,7 @@ public class SignUpActivity extends AppCompatActivity{
                 parent.put("user_name",user_name);
                 parent.put("email",emailId);
                 parent.put("password",pswd);
+                parent.put("phone",phone);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
