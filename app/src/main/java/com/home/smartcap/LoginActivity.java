@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else
                     return result.toString();
             } catch (Exception e) {
-                return null;
+                return e.getMessage();
             }
         }
 

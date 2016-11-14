@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         if (jsonBody != null && jsonBody != "Testing") {
             tv.setText(jsonBody);
         } else {
-            tv.setText("Error Occurred");
+            tv.setText("Error in retrieving data. Try Refresh");
         }
         _refresh = (ImageButton) findViewById(R.id.refresh);
         _refresh.setOnClickListener(new View.OnClickListener() {

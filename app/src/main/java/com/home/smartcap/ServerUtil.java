@@ -6,9 +6,9 @@ package com.home.smartcap;
 
 public class ServerUtil {
 
-    private static final String PATIENT_ENDPOINT ="https://smartcap-abhibroto0402.c9users.io/patient/";
+    public static final String PATIENT_ENDPOINT ="https://smartcap-abhibroto0402.c9users.io/patient/";
 
-    private static final String USERS_ENDPOINT = "https://smartcap-abhibroto0402.c9users.io/user/";
+    public static final String USERS_ENDPOINT = "https://smartcap-abhibroto0402.c9users.io/user/";
 
 
     public static String getPatientEndpoint(String email){
