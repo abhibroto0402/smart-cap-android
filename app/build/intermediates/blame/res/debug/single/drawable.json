@@ -24,12 +24,12 @@
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/refresh.png",
@@ -68,12 +68,12 @@
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
-        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ratingbar_small_material.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/pill.png",
         "source": "/Users/amukherjee/Documents/SmartCap/app/src/main/res/drawable/pill.png"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
