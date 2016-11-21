@@ -10,6 +10,28 @@
         android:layout_height="70dp"
         android:background="#D6D7D7">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:id="@+id/day"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:textAlignment="center"
+            android:fontFamily="casual"
+            android:textColor="#DE3163"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:textColor="#DE3163"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/day"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:fontFamily="casual"/>
+
         <ImageButton
             android:id="@+id/refresh"
             android:layout_width="wrap_content"

@@ -144,12 +144,12 @@
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_activity_chooser_view.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/SmartCap/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",

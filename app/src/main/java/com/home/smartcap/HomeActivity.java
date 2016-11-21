@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,6 +19,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by amukherjee on 11/3/16.
@@ -32,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     private DrugAdapter mdrugadapter;
     private int number_of_drugs;
     private DrugSchedule[] ds;
+    private TextView date, day;
 
 
     @Override
@@ -39,6 +44,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         _mListView = (ListView) findViewById(R.id.drug_schedule);
+        date = (TextView) findViewById(R.id.date);
+        day = (TextView) findViewById(R.id.day);
+        DateFormat dayF = new SimpleDateFormat("EEE");
+        DateFormat dateF = new SimpleDateFormat("MMM dd, yyyy");
+        String now = dayF.format(new Date());
+        date.setText(dateF.format(new Date()));
+        day.setText(now);
 
 
         final Bundle extras = getIntent().getExtras();

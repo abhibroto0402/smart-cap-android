@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                     jsonData = info.toString();
                     return "200";
                 } else
-                    return result.toString();
+                    return user_json;
             } catch (Exception e) {
                 return e.getMessage();
             }
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (result == "blank" || s == "200")
                     result = "Login Successful";
                 else
-                    result = "Login Failure. Try again";
+                    result = "Login Failure. Try again" + user_json;
             } catch (NullPointerException e) {
                 result = "Login Failed";
             }

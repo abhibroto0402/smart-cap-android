@@ -5,37 +5,33 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="68040111892404"
+    timestamp="144576766118743"
     token="-4865705604006455025"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="91" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="5" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="7" />
+        duration="0" />
     <task
         name="verifier"
-        duration="1" />
-
-    <artifact
-        location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        duration="0" />
 
     <build
-        timestamp="61743357106796"
+        timestamp="141674656151551"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="67678098148563"
-        verifier="R_CLASS_CHANGE" >
+        timestamp="143374767423412"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
             type="DEX" />
@@ -44,18 +40,7 @@
             type="DEX" />
     </build>
     <build
-        timestamp="67960580094440"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="68040111892404"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
+        timestamp="144576766118743"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
