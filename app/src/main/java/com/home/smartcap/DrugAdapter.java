@@ -44,12 +44,14 @@ public class DrugAdapter extends ArrayAdapter <DrugSchedule> {
         TextView drug_nameView = (TextView) row.findViewById(R.id.drugname);
         TextView dailyTime = (TextView) row.findViewById(R.id.daily_time);
         TextView expdate = (TextView) row.findViewById(R.id.expdate);
+        TextView next_due = (TextView) row.findViewById(R.id.next_due);
 
         DrugSchedule ds = mdata[position];
 
         drug_nameView.setText( ds.getListData("drug_name"));
         dailyTime.setText(ds.getListData("dosage"));
         expdate.setText(ds.getListData("expdate"));
+        next_due.setText(ds.getListData("nextIntake"));
 
         return row;
     }
