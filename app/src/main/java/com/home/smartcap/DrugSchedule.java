@@ -18,10 +18,10 @@ public class DrugSchedule {
     public String dosage;
     public String expdate;
     public String smartcap_id;
-    public String next_intake;
+    public String meal;
     private static final HashMap<String, String[]> time_dose_map;
     static{
-        time_dose_map = new HashMap<String, String[]>();
+        time_dose_map = new HashMap<>();
         time_dose_map.put("1X", new String[]{"11","13"});
         time_dose_map.put("2X", new String[]{"11", "13", "18", "20"});
         time_dose_map.put("3X", new String[]{"7", "9", "13", "15", "18", "20"});
@@ -40,6 +40,9 @@ public class DrugSchedule {
                             break;
                         case 2:
                             this.dosage = tempArr.getString(x);
+                            break;
+                        case 3:
+                            this.meal = tempArr.getString(x);
                             break;
                         case 4:
                             this.expdate = tempArr.getString(x).replace("/","-");
@@ -70,7 +73,7 @@ public class DrugSchedule {
                 String hour = sdf.format(new Date());
                 for(String e: temp){
                     if(Integer.parseInt(e)>= Integer.parseInt(hour)){
-                        return "Next Dosage between: " + String.valueOf(Integer.parseInt(e)-2)+ ":00 -"+ e + ":00";
+                        return "Next Dosage between: " + String.valueOf(Integer.parseInt(e)-2)+ ":00 -"+ e + ":00" + " ("+this.meal+" meal)";
 
                     }
                 }
