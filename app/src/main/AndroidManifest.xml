@@ -25,6 +25,9 @@
         <activity
             android:name=".AddPrescription"
             android:label="SmartCap"/>
+        <activity
+            android:name=".TemperatureActivity"
+            android:label="SmartCap"/>
 
     </application>
 

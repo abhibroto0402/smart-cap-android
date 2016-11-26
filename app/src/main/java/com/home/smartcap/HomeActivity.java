@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton _refresh;
     private String jsonBody, emailId, user_json;
     private ImageButton _addPrescription;
+    private ImageButton _temperature;
     private ListView _mListView;
     private DrugAdapter mdrugadapter;
     private int number_of_drugs;
@@ -90,6 +91,18 @@ public class HomeActivity extends AppCompatActivity {
                 Intent pres = new Intent(view.getContext(), AddPrescription.class);
                 pres.putExtra("user_json", user_json);
                 startActivity(pres);
+            }
+        });
+
+        _temperature = (ImageButton) findViewById(R.id.temperature);
+        _temperature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent temperature= new Intent(view.getContext(), TemperatureActivity.class);
+                temperature.putExtra("jsonData", jsonBody);
+                temperature.putExtra("emailId", emailId);
+                temperature.putExtra("user_json", user_json);
+                startActivity(temperature);
             }
         });
     }
