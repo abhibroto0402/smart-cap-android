@@ -10,12 +10,6 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/bleTest"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bleTest"
-        android:id="@+id/sendsms"
-        android:text="Send SMS"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,4 +66,14 @@
             android:scaleType="fitCenter"
             android:src="@drawable/pill"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendsms"
+        android:text="Send SMS"
+        android:layout_below="@+id/bleTest"
+        android:layout_toLeftOf="@+id/bleTest"
+        android:layout_toStartOf="@+id/bleTest"
+        android:layout_marginTop="83dp"/>
 </RelativeLayout>

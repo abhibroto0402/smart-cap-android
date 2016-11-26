@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                         i.putExtra("emailId", emailId);
                         i.putExtra("user_json", user_json);
                         startActivity(i);
+                        finish();
                     }
                 } else
                     throwError("Error in email Format");

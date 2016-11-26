@@ -10,6 +10,13 @@
         android:layout_height="70dp"
         android:background="#D6D7D7">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout"
+            android:text="Logout"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

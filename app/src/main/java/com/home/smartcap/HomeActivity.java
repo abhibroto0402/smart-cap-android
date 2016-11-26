@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     private int number_of_drugs;
     private DrugSchedule[] ds;
     private TextView date, day;
+    private Button logout;
 
 
     @Override
@@ -103,6 +105,16 @@ public class HomeActivity extends AppCompatActivity {
                 temperature.putExtra("emailId", emailId);
                 temperature.putExtra("user_json", user_json);
                 startActivity(temperature);
+            }
+        });
+
+        logout = (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent(HomeActivity.this,LoginActivity.class );
+                startActivity(login);
+                finish();
             }
         });
     }
