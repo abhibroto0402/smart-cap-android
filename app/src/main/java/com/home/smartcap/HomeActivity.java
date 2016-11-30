@@ -72,6 +72,8 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
+                    Intent ble = new Intent(view.getContext(), ConnectActivity.class);
+                    startActivity(ble);
                 }
             });
         }catch (NullPointerException e){

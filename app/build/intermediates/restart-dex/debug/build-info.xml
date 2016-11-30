@@ -5,8 +5,8 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="163653493267324"
-    token="-4865705604006455025"
+    timestamp="305484023876853"
+    token="5168146024065118950"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
@@ -23,32 +23,22 @@
         duration="0" />
 
     <artifact
-        location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
+        location="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="160111607507456"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="305293059840765"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/outputs/apk/app-debug.apk"
+            location="/Users/amukherjee/Documents/smartcap_app/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="163457820207482"
+        timestamp="305484023876853"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            location="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="163653493267324"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
     </build>
 
 </instant-run>
