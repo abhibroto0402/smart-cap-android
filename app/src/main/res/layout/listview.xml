@@ -8,7 +8,8 @@
         android:padding="5dp"
         android:layout_margin="1dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#4982c3"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,12 +17,14 @@
         android:padding="5dp"
         android:layout_margin="1dp"
         android:id="@+id/next_due"
-        android:layout_below="@+id/drugname"/>
+        android:layout_below="@+id/drugname"
+        android:textColor="#4982c3"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:padding="5dp"
+        android:textColor="#4982c3"
         android:layout_margin="1dp"
         android:id="@+id/daily_time"
         android:layout_below="@+id/next_due"/>
@@ -32,7 +35,7 @@
         android:padding="5dp"
         android:layout_margin="1dp"
         android:id="@+id/expdate"
+        android:textColor="#4982c3"
         android:layout_toRightOf="@+id/daily_time"
         android:layout_below="@+id/next_due"/>
-
 </RelativeLayout>

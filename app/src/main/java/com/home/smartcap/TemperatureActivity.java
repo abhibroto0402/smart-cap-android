@@ -1,19 +1,13 @@
 package com.home.smartcap;
 
 import android.content.Intent;
-import android.os.AsyncTask;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 /**
  * Created by amukherjee on 11/26/16.
@@ -21,29 +15,33 @@ import java.net.URL;
 
 public class TemperatureActivity extends AppCompatActivity {
 
-    private TextView bleText;
-    private Button sendSMS;
-    private ImageButton _home, _addPrescription;
-    private String jsonBody, emailId, user_json;
+    private TextView message;
+    private ImageButton _home, _addPrescription,_humidity;
+    private String jsonBody, emailId, user_json, halert, talert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature);
-        bleText = (TextView) findViewById(R.id.bleTest);
-        sendSMS =(Button) findViewById(R.id.sendsms);
+        message = (TextView) findViewById(R.id.message);
+
         //Initialize all values
         final Bundle extras = getIntent().getExtras();
         jsonBody = extras.getString("jsonData");
         emailId = extras.getString("emailId");
         user_json = extras.getString("user_json");
+        halert = extras.getString("halert");
+        talert = extras.getString("talert");
+        if(Boolean.valueOf(talert)){
+            message.setText("Temperature Spike Detected Today");
+            int color = Color.parseColor("#ff0040");
+            message.setBackgroundColor(color);
+        }
+        else{
+            message.setText("No Temperature Spikes detected today");
+            int color = Color.parseColor("#77fd04");
+            message.setBackgroundColor(color);
+        }
 
-
-        sendSMS.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new SendSMS().execute(ServerUtil.getBaseEndpoint()+"twilio");
-            }
-        });
         _addPrescription = (ImageButton) findViewById(R.id.prescription);
         _addPrescription.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +49,7 @@ public class TemperatureActivity extends AppCompatActivity {
                 Intent pres = new Intent(view.getContext(), AddPrescription.class);
                 pres.putExtra("user_json", user_json);
                 startActivity(pres);
+                finish();
             }
         });
 
@@ -63,41 +62,24 @@ public class TemperatureActivity extends AppCompatActivity {
                 home.putExtra("user_json", user_json);
                 home.putExtra("jsonData", jsonBody);
                 startActivity(home);
+                finish();
+            }
+        });
+        _humidity = (ImageButton) findViewById(R.id.humidity);
+        _humidity.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent humidity = new Intent(view.getContext(),HumidityActivity.class);
+                humidity.putExtra("halert", halert);
+                humidity.putExtra("talert", talert);
+                humidity.putExtra("emailId", emailId);
+                humidity.putExtra("user_json", user_json);
+                humidity.putExtra("jsonData", jsonBody);
+                startActivity(humidity);
+                finish();
             }
         });
 
     }
 
-    private class SendSMS extends AsyncTask<String, String, String>{
-
-        @Override
-        protected String doInBackground(String... params) {
-            StringBuilder info = new StringBuilder();
-            try {
-                URL url = new URL(params[0]);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("GET");
-                conn.connect();
-                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                String line;
-                while ((line = rd.readLine()) != null) {
-                    info.append(line);
-                }
-                rd.close();
-                return info.toString();
-
-
-            } catch (Exception e) {
-                return "";
-            }
-
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            bleText.setText(s);
-
-        }
-
-    }
 }

@@ -9,6 +9,7 @@ import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,8 +17,22 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
     private int mIndex = 0;
 
     private Button mButtonUpdate;
-
-    private String mDeviceName;
+    private int mcount, tcount, hcount;
+    private JSONObject jsonBody;
+    private String mDeviceName, email, talert, halert;
     private String mDeviceAddress;
     private BluetoothDevice mDevice;
     private BluetoothAdapter mBluetoothAdapter;
@@ -56,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mListView = (ListView) findViewById(R.id.my_list_view);
         mListAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, new ArrayList<String>());
         mListView.setAdapter(mListAdapter);
@@ -68,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
+        mcount= Integer.parseInt(intent.getStringExtra("mcount"));
+        email = intent.getStringExtra("email");
+        talert = intent.getStringExtra("talert");
+        halert = intent.getStringExtra("halert");
 
         final BluetoothManager bluetoothManager =
                 (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
@@ -80,6 +99,34 @@ public class MainActivity extends AppCompatActivity {
 
             mBluetoothGatt = mDevice.connectGatt(getApplicationContext(), false, btleGattCallback);
 
+            /*
+            * Create JSON File for the request body
+            * {
+	            "email":"abi@abi.com",
+	            "date":"12-02-2016",
+	            "num":"3"
+               }
+            *
+            */
+            SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+            String edate = sdf.format(new Date());
+            try {
+                jsonBody.put("email", email);
+                jsonBody.put("date", edate);
+                jsonBody.put("num", String.valueOf(mcount));
+                if(tcount>1)
+                    jsonBody.put("temp_alert", "true");
+                else
+                    jsonBody.put("temp_alert",talert );
+                if(hcount>1)
+                    jsonBody.put("humidity_alert", "true");
+                else
+                    jsonBody.put("humidity_alert",halert );
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            new UploadEvent().execute(ServerUtil.getBaseEndpoint()+"event");
 
         }
     };
@@ -146,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     mBluetoothGatt.disconnect();
                     mBluetoothGatt.close();
+
                 }
             }
             else if (characteristic.getUuid().equals(TIMESTAMP_UUID))
@@ -174,6 +222,21 @@ public class MainActivity extends AppCompatActivity {
 
                 final String event = String.format("[%d]<T:%d>:<E:%d>:<D:%d>", mIndex, mTimestamp, mEventType, mEventValue);
                 Log.i("TAG-EVENT:", event);
+                switch (mEventType){
+                    case 0:
+                        mcount++;
+                        break;
+                    case 2:
+                        if(mEventValue > 30000)
+                            tcount++;
+                        break;
+                    case 3:
+                        if(mEventType>40000)
+                            hcount++;
+                        break;
+
+
+                }
 
                 mListView.post(new Runnable() {
                     @Override
@@ -202,6 +265,47 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-    };
 
+
+    };
+    public class UploadEvent extends AsyncTask<String, String, String>{
+
+        @Override
+        protected String doInBackground(String... params) {
+            StringBuilder result = new StringBuilder();
+            StringBuilder info = new StringBuilder();
+            try {
+                URL url = new URL(params[0]);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.connect();
+                OutputStreamWriter wr= new OutputStreamWriter(conn.getOutputStream());
+                wr.write(jsonBody.toString());
+                wr.close();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    result.append(line);
+                }
+                rd.close();
+                return result.toString();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Toast.makeText(MainActivity.this, s,Toast.LENGTH_SHORT).show();
+        }
+    };
 }

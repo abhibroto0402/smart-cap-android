@@ -10,9 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView _signupLink;
     private EditText emailid;
     private EditText password;
-    public String emailId, pswd;
+    public String emailId, pswd,med_taken_times,humdityAlert,tempAlert;
     private String jsonData = "Testing";
     private boolean isValid = false;
     private String result = "blank";
@@ -74,6 +80,9 @@ public class LoginActivity extends AppCompatActivity {
                         i.putExtra("jsonData", jsonData);
                         i.putExtra("emailId", emailId);
                         i.putExtra("user_json", user_json);
+                        i.putExtra("mtimes", med_taken_times);
+                        i.putExtra("talert", tempAlert);
+                        i.putExtra("halert", humdityAlert);
                         startActivity(i);
                         finish();
                     }
@@ -124,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     rd.close();
                     jsonData = info.toString();
+                    getEvents(new URL(ServerUtil.getBaseEndpoint()+"event/"+emailId));
                     return "200";
                 } else
                     return user_json;
@@ -142,6 +152,36 @@ public class LoginActivity extends AppCompatActivity {
                     result = "Login Failure. Try again" + user_json;
             } catch (NullPointerException e) {
                 result = "Login Failed";
+            }
+        }
+        private void getEvents(URL url){
+
+            StringBuilder result = new StringBuilder();
+            JSONObject parent;
+            try {
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.connect();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    result.append(line);
+                }
+                rd.close();
+                parent = new JSONObject(result.toString());
+                med_taken_times= parent.getJSONObject("Event").getString("open_cap_event_times");
+                tempAlert=  parent.getJSONObject("Event").getString("temp_alert");
+                humdityAlert= parent.getJSONObject("Event").getString("humidity_alert");
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
     }

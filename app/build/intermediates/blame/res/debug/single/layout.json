@@ -52,12 +52,12 @@
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_bar.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
@@ -78,6 +78,10 @@
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/activity_humidity.xml",
+        "source": "/Users/amukherjee/Documents/smartcap_app/app/src/main/res/layout/activity_humidity.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",

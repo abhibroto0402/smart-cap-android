@@ -3,138 +3,120 @@
 
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_c17a02b514a5f95a81fd4e012eb9bbfa60f43fa6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_d3d7347e24de930096229eb1d480a025b11aac8c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_58c45b500ec4407d4136314294d740383b3e9b8f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_ae765231c73720e010a5f6b914d546fc01ad465c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_841b3642f7a04893913992cedaba8677119e5f51/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_6d527af8af1264eea5e7ceb5a9ff13442e26d0f9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_0e6cfb7d86b963e9e443e3305c4e2c6f66361150/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_e46029f4c1567984b85b801eedcb8c782ec19538/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_98e2cf8f55aab99db2e0d67202b8a7d96e3cee3d/classes.dex" />
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_a95de5df377f02485d35b22edbba57d432376e77/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_7d7260e8434d6e65762ca16399d4b3007255dd1c/classes.dex" />
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_3bb880d58e363b28457c033b7b575d480964a0d8/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_4dd2fced1b1c0f1019f37861f5bf040df37e4474/classes.dex" />
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_f3c0a7032e470ce852c87ddd73d57fb034e1de03/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f743a1bb5f5bc0fa892995290f9a09a94fd62764">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2a20680b622f568d6d08453a8ad848ce94a344da/classes.dex" />
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_aadc863be7c50a4fe239d2c8ef2b1d95dde67632/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ce620222bcc6104baa4b48b6a360025e6141b55c">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e9902a1345859c609a8a477c495da17d261775a/classes.dex" />
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_004feb0a14f1f0cb3a97219f60f6429c21946c7e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_354559386c1b7eede5ce07f30eee6dc1501a9265/classes.dex" />
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_519cdaf3a0cbe6a4acbf76d9afc7f273e7154190/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_43df8f1af62159030d2ef98e1602f161b2be9806/classes.dex" />
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_9405ec53f4174f142c8c7e8cf4da73e54e5181c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_8141665d8faa459103eb83bced844a16c5f4918e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="06e6d8fa0028ef0a28142ecf876916274bdb927b">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d7f2bb072fe11eb1301ac1e135d29ff9f54be510/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_6614d1a1a329c154d7dae0b72bbc996db46b0661/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_938225af2f0c1ce5421d9bc43a52b4d5dc66778a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_0844a3299a7eb09649fe8ded1247a37bab6eeb58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_ab05cc11250f477cdb326812f89253f6af6e73a9/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -143,16 +125,34 @@
         optimize="true"
         revision="25.0.0"
         sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_12420114017f48f0fe9490d6bee0b3f8d410a5ad/classes.dex" />
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_12420114017f48f0fe9490d6bee0b3f8d410a5ad/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/Users/amukherjee/Documents/SmartCap/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_8dd7fb3ed34b5ed610c4913ff777eac9495a0c55/classes.dex" />
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_3d29ebeb4de36acb7621278f156150025d4ac2ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_a6f77e46a66bb94e23b726a6d8dd742e0c5dd96a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2fd36456723bcabafa295b49dbec943a11c4722d">
+        <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d039884049346cf4adbd10cd9f43a0d8c9795447/classes.dex" />
     </item>
 
 </items>

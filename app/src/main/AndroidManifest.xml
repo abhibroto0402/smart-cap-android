@@ -35,6 +35,9 @@
             android:name=".TemperatureActivity"
             android:label="SmartCap"/>
         <activity
+            android:name=".HumidityActivity"
+            android:label="SmartCap"/>
+        <activity
             android:name=".ConnectActivity"
             android:label="SmartCap"/>
         <activity

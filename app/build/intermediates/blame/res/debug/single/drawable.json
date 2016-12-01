@@ -4,16 +4,16 @@
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
+        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/temperature.png",
         "source": "/Users/amukherjee/Documents/smartcap_app/app/src/main/res/drawable/temperature.png"
     },
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/refresh.png",
         "source": "/Users/amukherjee/Documents/smartcap_app/app/src/main/res/drawable/refresh.png"
-    },
-    {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
@@ -104,12 +104,12 @@
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_edit_text_material.xml"
-    },
-    {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
         "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",

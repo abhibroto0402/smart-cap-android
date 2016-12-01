@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:2:1-47:12
+ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:2:1-50:12
 	package
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml
@@ -36,7 +36,7 @@ ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest
 	android:name
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:10:9-53
 application
-ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:12:5-45:19
+ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:12:5-48:19
 MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.0.0] /Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.0.0] /Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:25:5-20
@@ -94,18 +94,24 @@ ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:36:13-37
 	android:name
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:35:13-48
-activity#com.home.smartcap.ConnectActivity
+activity#com.home.smartcap.HumidityActivity
 ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:37:9-39:39
 	android:label
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:38:13-44
-activity#com.home.smartcap.MainActivity
+		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:38:13-45
+activity#com.home.smartcap.ConnectActivity
 ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:40:9-42:39
 	android:label
 		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:41:13-41
+		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:41:13-44
+activity#com.home.smartcap.MainActivity
+ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:43:9-45:39
+	android:label
+		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml:44:13-41
 uses-sdk
 INJECTED from /Users/amukherjee/Documents/smartcap_app/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:21:5-23:78

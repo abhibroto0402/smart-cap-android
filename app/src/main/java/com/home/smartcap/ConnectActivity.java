@@ -25,7 +25,7 @@ public class ConnectActivity extends AppCompatActivity {
     // Variables required for the UI
     private ListView mListView;
     private LeDeviceListAdapter mListAdapter;
-
+    private String mcount, memail, halert, talert;
     // Variables and Constants Required for Bluetooth
     private BluetoothManager mBluetoothManager;
     private BluetoothAdapter mBluetoothAdapter;
@@ -38,7 +38,11 @@ public class ConnectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
-
+        final Bundle extras = getIntent().getExtras();
+        mcount= extras.getString("mcount");
+        memail= extras.getString("emailId");
+        talert = extras.getString("temp_alert");
+        halert = extras.getString("humidity_alert");
         // Initializes Bluetooth adapter.
         final BluetoothManager bluetoothManager =
                 (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
@@ -77,6 +81,10 @@ public class ConnectActivity extends AppCompatActivity {
             final Intent intent = new Intent(getApplicationContext(), com.home.smartcap.MainActivity.class);
             intent.putExtra(com.home.smartcap.MainActivity.EXTRAS_DEVICE_NAME, device.getName());
             intent.putExtra(com.home.smartcap.MainActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+            intent.putExtra("mcount", mcount );
+            intent.putExtra("email", memail);
+            intent.putExtra("talert", talert);
+            intent.putExtra("halert", halert);
             if (mScanning) {
                 mBluetoothAdapter.stopLeScan(mLeScanCallback);
                 mScanning = false;

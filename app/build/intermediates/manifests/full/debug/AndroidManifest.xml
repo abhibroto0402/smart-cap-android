@@ -43,6 +43,9 @@
             android:name="com.home.smartcap.TemperatureActivity"
             android:label="SmartCap" />
         <activity
+            android:name="com.home.smartcap.HumidityActivity"
+            android:label="SmartCap" />
+        <activity
             android:name="com.home.smartcap.ConnectActivity"
             android:label="SmartCap" />
         <activity

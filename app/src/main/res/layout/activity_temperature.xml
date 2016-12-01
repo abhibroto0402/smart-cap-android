@@ -3,13 +3,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/bleTest"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/message"
+            android:layout_margin="20dp"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,13 +72,4 @@
             android:src="@drawable/pill"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sendsms"
-        android:text="Send SMS"
-        android:layout_below="@+id/bleTest"
-        android:layout_toLeftOf="@+id/bleTest"
-        android:layout_toStartOf="@+id/bleTest"
-        android:layout_marginTop="83dp"/>
 </RelativeLayout>

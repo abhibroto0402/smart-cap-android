@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,8 +19,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -31,16 +36,63 @@ import java.util.Date;
 public class HomeActivity extends AppCompatActivity {
 
     private ImageButton _refresh;
-    private String jsonBody, emailId, user_json;
+    private String jsonBody, emailId, user_json, med_taken_times, tempAlert, humdityAlert;
     private ImageButton _addPrescription;
-    private ImageButton _temperature;
+    private ImageButton _temperature, _humidity;
     private ListView _mListView;
     private DrugAdapter mdrugadapter;
     private int number_of_drugs;
     private DrugSchedule[] ds;
     private TextView date, day;
     private Button logout;
+    private CheckedTextView checkText;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+        try {
+            if (jsonBody.contains(med_taken_times+"X")) {
+                checkText.setChecked(true);
+            }
+            else
+                checkText.setChecked(false);
+        }catch (NullPointerException e){
+            Log.v("NUMBEROFMEDS","");
+        }
+
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+        try {
+            if (jsonBody.contains(med_taken_times+"X")) {
+                checkText.setChecked(true);
+            }
+            else
+                checkText.setChecked(false);
+        }catch (NullPointerException e){
+            Log.v("NUMBEROFMEDS","");
+        }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+        try {
+            if (jsonBody.contains(med_taken_times+"X")) {
+                checkText.setChecked(true);
+            }
+            else
+                checkText.setChecked(false);
+        }catch (NullPointerException e){
+            Log.v("NUMBEROFMEDS","");
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
         _mListView = (ListView) findViewById(R.id.drug_schedule);
         date = (TextView) findViewById(R.id.date);
         day = (TextView) findViewById(R.id.day);
+        checkText = (CheckedTextView) findViewById(R.id.checkedTextView);
         DateFormat dayF = new SimpleDateFormat("EEE");
         DateFormat dateF = new SimpleDateFormat("MMM dd, yyyy");
         String now = dayF.format(new Date());
@@ -62,6 +115,19 @@ public class HomeActivity extends AppCompatActivity {
         jsonBody = extras.getString("jsonData");
         emailId = extras.getString("emailId");
         user_json = extras.getString("user_json");
+        med_taken_times= extras.getString("mtimes");
+        humdityAlert= extras.getString("halert");
+        tempAlert= extras.getString("talert");
+        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+        try {
+            if (jsonBody.contains(med_taken_times+"X")) {
+                checkText.setChecked(true);
+            }
+            else
+                checkText.setChecked(false);
+        }catch (NullPointerException e){
+            Log.v("NUMBEROFMEDS","");
+        }
 
         try {
             mdrugadapter = new DrugAdapter(getApplicationContext(), R.layout.listview, setDrugSchedule(jsonBody));
@@ -73,6 +139,10 @@ public class HomeActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
                     Intent ble = new Intent(view.getContext(), ConnectActivity.class);
+                    ble.putExtra("mcount",med_taken_times);
+                    ble.putExtra("emailId", emailId);
+                    ble.putExtra("temp_alert", tempAlert);
+                    ble.putExtra("humidity_alert", humdityAlert);
                     startActivity(ble);
                 }
             });
@@ -85,6 +155,16 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+                try {
+                    if (jsonBody.contains(med_taken_times+"X")) {
+                        checkText.setChecked(true);
+                    }
+                    else
+                        checkText.setChecked(false);
+                }catch (NullPointerException e){
+                    Log.v("NUMBEROFMEDS","");
+                }
+
             }
         });
 
@@ -106,7 +186,23 @@ public class HomeActivity extends AppCompatActivity {
                 temperature.putExtra("jsonData", jsonBody);
                 temperature.putExtra("emailId", emailId);
                 temperature.putExtra("user_json", user_json);
+                temperature.putExtra("talert", tempAlert);
+                temperature.putExtra("halert",humdityAlert);
                 startActivity(temperature);
+            }
+        });
+
+        _humidity = (ImageButton) findViewById(R.id.humidity);
+        _humidity.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent humidity = new Intent(view.getContext(),HumidityActivity.class);
+                humidity.putExtra("halert", humdityAlert);
+                humidity.putExtra("talert", tempAlert);
+                humidity.putExtra("emailId", emailId);
+                humidity.putExtra("user_json", user_json);
+                humidity.putExtra("jsonData", jsonBody);
+                startActivity(humidity);
             }
         });
 
@@ -140,6 +236,8 @@ public class HomeActivity extends AppCompatActivity {
                 if (info.toString().contains("id")) {
                     jsonBody = info.toString();
                     setDrugSchedule(jsonBody);
+                    url = new URL (ServerUtil.getBaseEndpoint()+"event/"+emailId);
+                    getEvents(url);
                     return jsonBody;
                 } else {
                     jsonBody = null;
@@ -201,6 +299,37 @@ public class HomeActivity extends AppCompatActivity {
         return ds;
 
 
+    }
+
+    private void getEvents(URL url){
+
+        StringBuilder result = new StringBuilder();
+        JSONObject parent;
+        try {
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+            rd.close();
+            parent = new JSONObject(result.toString());
+            med_taken_times= parent.getJSONObject("Event").getString("open_cap_event_times");
+            tempAlert=  parent.getJSONObject("Event").getString("temp_alert");
+            humdityAlert= parent.getJSONObject("Event").getString("humidity_alert");
+
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
