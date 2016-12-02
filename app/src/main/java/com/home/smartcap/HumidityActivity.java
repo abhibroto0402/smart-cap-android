@@ -70,7 +70,7 @@ public class HumidityActivity extends AppCompatActivity {
         _temperature.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent temperature = new Intent(view.getContext(),HumidityActivity.class);
+                Intent temperature = new Intent(view.getContext(),TemperatureActivity.class);
                 temperature.putExtra("talert", talert);
                 temperature.putExtra("emailId", emailId);
                 temperature.putExtra("user_json", user_json);
