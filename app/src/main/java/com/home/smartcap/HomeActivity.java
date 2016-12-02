@@ -47,52 +47,6 @@ public class HomeActivity extends AppCompatActivity {
     private Button logout;
     private CheckedTextView checkText;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
-        try {
-            if (jsonBody.contains(med_taken_times+"X")) {
-                checkText.setChecked(true);
-            }
-            else
-                checkText.setChecked(false);
-        }catch (NullPointerException e){
-            Log.v("NUMBEROFMEDS","");
-        }
-
-    }
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
-        try {
-            if (jsonBody.contains(med_taken_times+"X")) {
-                checkText.setChecked(true);
-            }
-            else
-                checkText.setChecked(false);
-        }catch (NullPointerException e){
-            Log.v("NUMBEROFMEDS","");
-        }
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
-        try {
-            if (jsonBody.contains(med_taken_times+"X")) {
-                checkText.setChecked(true);
-            }
-            else
-                checkText.setChecked(false);
-        }catch (NullPointerException e){
-            Log.v("NUMBEROFMEDS","");
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
