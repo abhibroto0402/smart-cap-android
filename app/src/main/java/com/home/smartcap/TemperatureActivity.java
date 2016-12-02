@@ -77,6 +77,7 @@ public class TemperatureActivity extends AppCompatActivity {
                 humidity.putExtra("emailId", emailId);
                 humidity.putExtra("user_json", user_json);
                 humidity.putExtra("jsonData", jsonBody);
+                humidity.putExtra("mtimes",mtimes);
                 startActivity(humidity);
                 finish();
             }
