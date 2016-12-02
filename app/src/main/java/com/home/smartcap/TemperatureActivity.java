@@ -50,7 +50,6 @@ public class TemperatureActivity extends AppCompatActivity {
                 Intent pres = new Intent(view.getContext(), AddPrescription.class);
                 pres.putExtra("user_json", user_json);
                 startActivity(pres);
-                finish();
             }
         });
 
@@ -64,7 +63,6 @@ public class TemperatureActivity extends AppCompatActivity {
                 home.putExtra("jsonData", jsonBody);
                 home.putExtra("mtimes",mtimes);
                 startActivity(home);
-                finish();
             }
         });
         _humidity = (ImageButton) findViewById(R.id.humidity);
@@ -79,7 +77,6 @@ public class TemperatureActivity extends AppCompatActivity {
                 humidity.putExtra("jsonData", jsonBody);
                 humidity.putExtra("mtimes",mtimes);
                 startActivity(humidity);
-                finish();
             }
         });
 

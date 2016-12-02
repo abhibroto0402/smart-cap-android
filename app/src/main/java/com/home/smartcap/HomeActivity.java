@@ -100,7 +100,8 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(ble);
                 }
             });
-        }catch (NullPointerException e){
+        }catch (Exception e){
+            e.printStackTrace();
 
         }
 

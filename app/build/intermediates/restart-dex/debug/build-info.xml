@@ -5,7 +5,7 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="2069438087207"
+    timestamp="3063040808492"
     token="5168146024065118950"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -17,7 +17,7 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="24" />
+        duration="34" />
     <task
         name="verifier"
         duration="2" />
@@ -34,7 +34,7 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="2069438087207"
+        timestamp="3063040808492"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
