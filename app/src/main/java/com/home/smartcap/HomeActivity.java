@@ -47,6 +47,12 @@ public class HomeActivity extends AppCompatActivity {
     private Button logout;
     private CheckedTextView checkText;
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
             _mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Log.v("DRUGSCHEDULE7", ds[i].getListData("expdate"));
+                    Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
                     Intent ble = new Intent(view.getContext(), ConnectActivity.class);
                     ble.putExtra("mcount",med_taken_times);
                     ble.putExtra("emailId", emailId);
