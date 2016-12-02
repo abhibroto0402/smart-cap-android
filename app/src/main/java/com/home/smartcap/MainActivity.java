@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mButtonUpdate, mButtonUpload;
     private int mcount;
-    Boolean tcount, hcount;
+    private boolean tcount, hcount;
     private JSONObject jsonBody;
     private String mDeviceName, email, talert, halert;
     private String mDeviceAddress;
