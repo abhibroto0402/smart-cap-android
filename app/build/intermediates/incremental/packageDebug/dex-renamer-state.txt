@@ -1,4 +1,4 @@
-#Thu Dec 01 15:53:26 CST 2016
+#Thu Dec 01 19:52:39 CST 2016
 base.0=/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d039884049346cf4adbd10cd9f43a0d8c9795447
 renamed.1=classes.dex
 renamed.0=classes2.dex

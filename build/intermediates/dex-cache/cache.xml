@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="06e6d8fa0028ef0a28142ecf876916274bdb927b">
+        sha1="9431c86d081180704f501fc8b614c9932d1ca0b4">
         <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d7f2bb072fe11eb1301ac1e135d29ff9f54be510/classes.dex" />
     </item>
     <item
@@ -151,7 +151,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="2fd36456723bcabafa295b49dbec943a11c4722d">
+        sha1="86f5fd4c25d9a1f52988ed6cc33fd0b1f3019e8f">
         <dex dex="/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d039884049346cf4adbd10cd9f43a0d8c9795447/classes.dex" />
     </item>
 

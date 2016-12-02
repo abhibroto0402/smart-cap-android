@@ -17,7 +17,7 @@ public class TemperatureActivity extends AppCompatActivity {
 
     private TextView message;
     private ImageButton _home, _addPrescription,_humidity;
-    private String jsonBody, emailId, user_json, halert, talert;
+    private String jsonBody, emailId, user_json, halert, talert,mtimes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,7 @@ public class TemperatureActivity extends AppCompatActivity {
         user_json = extras.getString("user_json");
         halert = extras.getString("halert");
         talert = extras.getString("talert");
+        mtimes= extras.getString("mtimes");
         if(Boolean.valueOf(talert)){
             message.setText("Temperature Spike Detected Today");
             int color = Color.parseColor("#ff0040");
@@ -61,6 +62,7 @@ public class TemperatureActivity extends AppCompatActivity {
                 home.putExtra("emailId", emailId);
                 home.putExtra("user_json", user_json);
                 home.putExtra("jsonData", jsonBody);
+                home.putExtra("mtimes",mtimes);
                 startActivity(home);
                 finish();
             }

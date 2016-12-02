@@ -188,6 +188,7 @@ public class HomeActivity extends AppCompatActivity {
                 temperature.putExtra("user_json", user_json);
                 temperature.putExtra("talert", tempAlert);
                 temperature.putExtra("halert",humdityAlert);
+                temperature.putExtra("mtimes",med_taken_times);
                 startActivity(temperature);
             }
         });
@@ -202,6 +203,7 @@ public class HomeActivity extends AppCompatActivity {
                 humidity.putExtra("emailId", emailId);
                 humidity.putExtra("user_json", user_json);
                 humidity.putExtra("jsonData", jsonBody);
+                humidity.putExtra("mtimes",med_taken_times);
                 startActivity(humidity);
             }
         });
