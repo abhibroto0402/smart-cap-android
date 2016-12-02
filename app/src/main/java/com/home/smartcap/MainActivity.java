@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             */
             SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
             String edate = sdf.format(new Date());
+            jsonBody= new JSONObject();
             try {
                 jsonBody.put("email", email);
                 jsonBody.put("date", edate);
