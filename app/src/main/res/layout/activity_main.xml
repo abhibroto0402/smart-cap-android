@@ -11,11 +11,18 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upload"
+        android:layout_alignParentBottom="true"
+        android:text="Upload"/>
+
+    <Button
         android:id="@+id/button"
         android:text="Update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/upload"
         />
 
     <Space
@@ -23,11 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_above="@id/button"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/upload"
-        android:text="Upload"/>
+
 
     <ListView
         android:id="@+id/my_list_view"
@@ -36,8 +39,6 @@
         android:layout_alignParentTop="true"
         android:layout_above="@id/spacer"
         android:layout_below="@+id/upload"/>
-
-
 
 
 </RelativeLayout>
