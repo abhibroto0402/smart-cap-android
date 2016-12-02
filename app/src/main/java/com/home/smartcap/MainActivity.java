@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
     private int mIndex = 0;
 
     private Button mButtonUpdate, mButtonUpload;
-    private int mcount, tcount, hcount;
+    private int mcount;
+    Boolean tcount, hcount;
     private JSONObject jsonBody;
     private String mDeviceName, email, talert, halert;
     private String mDeviceAddress;
@@ -101,11 +102,11 @@ public class MainActivity extends AppCompatActivity {
                     jsonBody.put("email", email);
                     jsonBody.put("date", edate);
                     jsonBody.put("num", String.valueOf(mcount));
-                    if (tcount > 1)
+                    if (tcount)
                         jsonBody.put("temp_alert", "true");
                     else
                         jsonBody.put("temp_alert", talert);
-                    if (hcount > 1)
+                    if (hcount)
                         jsonBody.put("humidity_alert", "true");
                     else
                         jsonBody.put("humidity_alert", halert);
@@ -223,11 +224,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         if (mEventValue > 30000)
-                            tcount++;
+                            tcount=true;
                         break;
                     case 3:
                         if (mEventValue > 40000)
-                            hcount=hcount+1;
+                            hcount=true;
                         break;
 
 
