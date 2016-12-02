@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity {
             _mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
+                    Log.v("DRUGSCHEDULE7", ds[i].getListData("expdate"));
                     Intent ble = new Intent(view.getContext(), ConnectActivity.class);
                     ble.putExtra("mcount",med_taken_times);
                     ble.putExtra("emailId", emailId);
@@ -210,7 +210,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            try {
+            /*try {
 
                 if (s != "") {
                     mdrugadapter = new DrugAdapter(getApplicationContext(), R.layout.listview, setDrugSchedule(s));
@@ -227,7 +227,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
             } catch (NullPointerException e) {
-            }
+            }*/
         }
 
     }
