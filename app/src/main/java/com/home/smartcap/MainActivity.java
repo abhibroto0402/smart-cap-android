@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter mListAdapter;
     private int mIndex = 0;
 
-    private Button mButtonUpdate;
+    private Button mButtonUpdate, mButtonUpload;
     private int mcount, tcount, hcount;
     private JSONObject jsonBody;
     private String mDeviceName, email, talert, halert;
@@ -79,11 +80,48 @@ public class MainActivity extends AppCompatActivity {
         mButtonUpdate = (Button) findViewById(R.id.button);
         mButtonUpdate.setOnClickListener(onUpdateClick);
 
+        mButtonUpload = (Button) findViewById(R.id.upload);
+        mButtonUpload.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            /*
+            * Create JSON File for the request body
+            * {
+	            "email":"abi@abi.com",
+	            "date":"12-02-2016",
+	            "num":"3"
+               }
+            *
+            */
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                String edate = sdf.format(new Date());
+                jsonBody = new JSONObject();
+                try {
+                    jsonBody.put("email", email);
+                    jsonBody.put("date", edate);
+                    jsonBody.put("num", String.valueOf(mcount));
+                    if (tcount > 1)
+                        jsonBody.put("temp_alert", "true");
+                    else
+                        jsonBody.put("temp_alert", talert);
+                    if (hcount > 1)
+                        jsonBody.put("humidity_alert", "true");
+                    else
+                        jsonBody.put("humidity_alert", halert);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                new UploadEvent().execute(ServerUtil.getBaseEndpoint() + "event");
+            }
+        });
+
         // Initializes Bluetooth adapter.
         final Intent intent = getIntent();
         mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME);
         mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS);
-        mcount= Integer.parseInt(intent.getStringExtra("mcount"));
+        mcount = Integer.parseInt(intent.getStringExtra("mcount"));
         email = intent.getStringExtra("email");
         talert = intent.getStringExtra("talert");
         halert = intent.getStringExtra("halert");
@@ -96,39 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     View.OnClickListener onUpdateClick = new View.OnClickListener() {
         public void onClick(View v) {
-
             mBluetoothGatt = mDevice.connectGatt(getApplicationContext(), false, btleGattCallback);
-
-            /*
-            * Create JSON File for the request body
-            * {
-	            "email":"abi@abi.com",
-	            "date":"12-02-2016",
-	            "num":"3"
-               }
-            *
-            */
-            SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-            String edate = sdf.format(new Date());
-            jsonBody= new JSONObject();
-            try {
-                jsonBody.put("email", email);
-                jsonBody.put("date", edate);
-                jsonBody.put("num", String.valueOf(mcount));
-                if(tcount>1)
-                    jsonBody.put("temp_alert", "true");
-                else
-                    jsonBody.put("temp_alert",talert );
-                if(hcount>1)
-                    jsonBody.put("humidity_alert", "true");
-                else
-                    jsonBody.put("humidity_alert",halert );
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            new UploadEvent().execute(ServerUtil.getBaseEndpoint()+"event");
-
         }
     };
 
@@ -148,8 +154,7 @@ public class MainActivity extends AppCompatActivity {
         public void onConnectionStateChange(final BluetoothGatt gatt, final int status, final int newState) {
             // this will get called when a device connects or disconnects
             Log.i("EVENT-TAG", "onConnectionStateChange");
-            if(status == BluetoothGatt.GATT_SUCCESS)
-            {
+            if (status == BluetoothGatt.GATT_SUCCESS) {
                 mBluetoothGatt.discoverServices();
             }
         }
@@ -160,10 +165,9 @@ public class MainActivity extends AppCompatActivity {
             Log.i("EVENT-TAG", "onServicesDiscovered");
             List<BluetoothGattService> services = mBluetoothGatt.getServices();
             for (BluetoothGattService service : services) {
-                if(service.getUuid().equals(LOG_TRANSFER_UUID)) {
+                if (service.getUuid().equals(LOG_TRANSFER_UUID)) {
                     mLogTransferService = service;
-                    for(BluetoothGattCharacteristic c : service.getCharacteristics())
-                    {
+                    for (BluetoothGattCharacteristic c : service.getCharacteristics()) {
                         Log.i("TAG-CHARACTERISTICS", String.format("%s", c.getUuid()));
                     }
                     BluetoothGattCharacteristic logCount = service.getCharacteristic(LOG_COUNT_UUID);
@@ -177,11 +181,9 @@ public class MainActivity extends AppCompatActivity {
         public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
             super.onCharacteristicRead(gatt, characteristic, status);
 
-            if(characteristic.getUuid().equals(LOG_COUNT_UUID))
-            {
-                int count = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32,0);
-                if( count > 0)
-                {
+            if (characteristic.getUuid().equals(LOG_COUNT_UUID)) {
+                int count = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32, 0);
+                if (count > 0) {
                     Log.i("EVENTLOG COUNT", String.format("%d", count));
                     mReadStatus = 0x00;
                     BluetoothGattCharacteristic timestamp = mLogTransferService.getCharacteristic(TIMESTAMP_UUID);
@@ -190,49 +192,41 @@ public class MainActivity extends AppCompatActivity {
                     mBluetoothGatt.readCharacteristic(timestamp);
 
 
-                } else
-                {
+                } else {
                     mBluetoothGatt.disconnect();
                     mBluetoothGatt.close();
 
                 }
-            }
-            else if (characteristic.getUuid().equals(TIMESTAMP_UUID))
-            {
-                mTimestamp = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32,0);
+            } else if (characteristic.getUuid().equals(TIMESTAMP_UUID)) {
+                mTimestamp = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32, 0);
                 mReadStatus |= 0x01;
                 BluetoothGattCharacteristic eventType = mLogTransferService.getCharacteristic(EVENT_TYPE_UUID);
                 mBluetoothGatt.readCharacteristic(eventType);
-            }
-            else if (characteristic.getUuid().equals(EVENT_TYPE_UUID))
-            {
-                mEventType = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32,0);
+            } else if (characteristic.getUuid().equals(EVENT_TYPE_UUID)) {
+                mEventType = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32, 0);
                 mReadStatus |= 0x02;
                 BluetoothGattCharacteristic eventValue = mLogTransferService.getCharacteristic(EVENT_VALUE_UUID);
                 mBluetoothGatt.readCharacteristic(eventValue);
-            }
-            else if (characteristic.getUuid().equals(EVENT_VALUE_UUID))
-            {
-                mEventValue = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32,0);
+            } else if (characteristic.getUuid().equals(EVENT_VALUE_UUID)) {
+                mEventValue = characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT32, 0);
                 mReadStatus |= 0x04;
             }
 
-            if(mReadStatus == 0x07)
-            {
+            if (mReadStatus == 0x07) {
                 mReadStatus = 0x00;
 
                 final String event = String.format("[%d]<T:%d>:<E:%d>:<D:%d>", mIndex, mTimestamp, mEventType, mEventValue);
                 Log.i("TAG-EVENT:", event);
-                switch (mEventType){
+                switch (mEventType) {
                     case 0:
                         mcount++;
                         break;
                     case 2:
-                        if(mEventValue > 30000)
+                        if (mEventValue > 30000)
                             tcount++;
                         break;
                     case 3:
-                        if(mEventType>40000)
+                        if (mEventType > 40000)
                             hcount++;
                         break;
 
@@ -260,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
             super.onCharacteristicWrite(gatt, characteristic, status);
 
-            if(characteristic.getUuid().equals(ACK_UUID)) {
+            if (characteristic.getUuid().equals(ACK_UUID)) {
                 BluetoothGattCharacteristic logCount = mLogTransferService.getCharacteristic(LOG_COUNT_UUID);
                 mBluetoothGatt.readCharacteristic(logCount);
             }
@@ -269,7 +263,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     };
-    public class UploadEvent extends AsyncTask<String, String, String>{
+
+    public class UploadEvent extends AsyncTask<String, String, String> {
 
         @Override
         protected String doInBackground(String... params) {
@@ -284,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setRequestProperty("Accept", "application/json");
                 conn.connect();
-                OutputStreamWriter wr= new OutputStreamWriter(conn.getOutputStream());
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
                 wr.write(jsonBody.toString());
                 wr.close();
                 BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -306,7 +301,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            Toast.makeText(MainActivity.this, s,Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
         }
-    };
+    }
+
+    ;
 }

@@ -23,6 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_above="@id/button"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upload"
+        android:text="Upload"/>
 
     <ListView
         android:id="@+id/my_list_view"
@@ -30,8 +35,7 @@
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_above="@id/spacer"
-
-        ></ListView>
+        android:layout_below="@+id/upload"/>
 
 
 
