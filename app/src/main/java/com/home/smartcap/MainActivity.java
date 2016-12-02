@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         if (mEventValue > 40000)
-                            hcount++;
+                            hcount=hcount+1;
                         break;
 
 
