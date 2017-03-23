@@ -111,6 +111,12 @@ public class HomeActivity extends AppCompatActivity {
                                     dialog.dismiss();
                                 }
                             });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
                     alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Remove",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
