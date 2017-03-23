@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "/Users/amukherjee/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/res/drawable-v21/notification_action_background.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "/Users/amukherjee/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/notification_action_background.xml"
+        "merged": "/Users/amukherjee/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "/Users/amukherjee/smartcap_app/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/res/drawable-v21/abc_btn_colored_material.xml"
     }
 ]

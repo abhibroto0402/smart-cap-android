@@ -80,11 +80,12 @@ public class SignUpActivity extends AppCompatActivity{
                         isValid = true;
                     }
                     if(isValid){
-                        String tempUrl= "https://smartcap-abhibroto0402.c9users.io/user/";
+                        String tempUrl= ServerUtil.USERS_ENDPOINT;
                         new CreateAccount().execute(tempUrl);
                         showMessage();
                         Intent i = new Intent(view.getContext(), LoginActivity.class);
                         startActivity(i);
+                        finish();
                     }
                     else
                         throwError("Error in email Format");

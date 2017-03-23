@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -37,6 +39,8 @@ public class AddPrescription extends AppCompatActivity {
     private RadioGroup meal, dosage;
     private RadioButton meal_btn, dosage_btn;
     private String home_disp, org_user;
+    private ImageButton _home, _addPrescription,_humidity;
+    private String  emailId, user_json, halert, talert,mtimes;
     private JSONObject createJsonBody (JSONObject jsonBody, List<String> _smartcap) throws JSONException {
 
         StringBuilder sb = new StringBuilder();
@@ -119,6 +123,44 @@ public class AddPrescription extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        _addPrescription = (ImageButton) findViewById(R.id.prescription);
+        _addPrescription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pres = new Intent(view.getContext(), AddPrescription.class);
+                pres.putExtra("user_json", user_json);
+                startActivity(pres);
+            }
+        });
+
+        _home = (ImageButton) findViewById(R.id.timer);
+        _home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(view.getContext(), HomeActivity.class);
+                home.putExtra("emailId", emailId);
+                home.putExtra("user_json", user_json);
+                home.putExtra("jsonData", (Serializable) jsonBody);
+                home.putExtra("mtimes",mtimes);
+                startActivity(home);
+            }
+        });
+        _humidity = (ImageButton) findViewById(R.id.humidity);
+        _humidity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent humidity = new Intent(view.getContext(),HumidityActivity.class);
+                humidity.putExtra("halert", halert);
+                humidity.putExtra("talert", talert);
+                humidity.putExtra("emailId", emailId);
+                humidity.putExtra("user_json", user_json);
+                humidity.putExtra("jsonData", (Serializable) jsonBody);
+                humidity.putExtra("mtimes",mtimes);
+                startActivity(humidity);
             }
         });
     }

@@ -31,7 +31,7 @@ public class HumidityActivity extends AppCompatActivity {
         halert = extras.getString("halert");
         talert = extras.getString("talert");
         mtimes= extras.getString("mtimes");
-        if(Boolean.valueOf(halert)){
+        if(Boolean.valueOf(halert) && halert!=null){
             message.setText("Humidity Spike Detected Today");
             int color = Color.parseColor("#ff0040");
             message.setBackgroundColor(color);

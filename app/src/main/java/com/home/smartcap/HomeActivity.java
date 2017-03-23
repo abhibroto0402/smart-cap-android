@@ -1,8 +1,11 @@
 package com.home.smartcap;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView date, day;
     private Button logout;
     private CheckedTextView checkText;
+    private static String email;
 
     @Override
     protected void onResume(){
@@ -74,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         //Initialize all values
         jsonBody = extras.getString("jsonData");
         emailId = extras.getString("emailId");
+        email= emailId;
         user_json = extras.getString("user_json");
         med_taken_times= extras.getString("mtimes");
         humdityAlert= extras.getString("halert");
@@ -97,13 +102,29 @@ public class HomeActivity extends AppCompatActivity {
             _mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
+                    AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
+                    alertDialog.setTitle("Update");
+                    alertDialog.setMessage(ds[i].getListData("drug_name"));
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Took",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Remove",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    new RemoveUserData().execute(ServerUtil.getBaseEndpoint());
+                                }
+                            });
+                    alertDialog.show();
+                    /*Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
                     Intent ble = new Intent(view.getContext(), ConnectActivity.class);
                     ble.putExtra("mcount",med_taken_times);
                     ble.putExtra("emailId", emailId);
                     ble.putExtra("temp_alert", tempAlert);
                     ble.putExtra("humidity_alert", humdityAlert);
-                    startActivity(ble);
+                    startActivity(ble);*/
                 }
             });
         }catch (Exception e){
@@ -115,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
         _refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
+                new GetUserData().execute(ServerUtil.getPatientEndpoint(email));
                 try {
                     if (jsonBody.contains(med_taken_times+"X")) {
                         checkText.setChecked(true);
@@ -216,24 +237,43 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            /*try {
+        }
 
-                if (s != "") {
-                    mdrugadapter = new DrugAdapter(getApplicationContext(), R.layout.listview, setDrugSchedule(s));
-                    if (_mListView != null && ds != null) {
-                        _mListView.setAdapter(mdrugadapter);
-                    }
-                    _mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            Log.v("DRUGSCHEDULE", ds[i].getListData("expdate"));
-                        }
-                    });
+    }
 
+    private class RemoveUserData extends AsyncTask<String, String, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            StringBuilder info = new StringBuilder();
+            try {
+                URL url = new URL(urls[0]+"remove/"+emailId);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.connect();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    info.append(line);
+                }
+                rd.close();
+                if (info.toString().contains("id")) {
+                    jsonBody = info.toString();
+                    setDrugSchedule(jsonBody);
+                    return jsonBody;
+                } else {
+                    jsonBody = null;
+                    return "";
                 }
 
-            } catch (NullPointerException e) {
-            }*/
+            } catch (Exception e) {
+                return "";
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
         }
 
     }

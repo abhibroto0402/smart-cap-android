@@ -6,11 +6,11 @@ package com.home.smartcap;
 
 public class ServerUtil {
 
-    public static final String PATIENT_ENDPOINT ="https://smartcap-cloned-abhibroto0402.c9users.io/patient/";
+    public static final String PATIENT_ENDPOINT ="http://ec2-52-33-82-105.us-west-2.compute.amazonaws.com/patient/";
 
-    public static final String USERS_ENDPOINT = "https://smartcap-cloned-abhibroto0402.c9users.io/user/";
+    public static final String USERS_ENDPOINT = "http://ec2-52-33-82-105.us-west-2.compute.amazonaws.com/user/";
 
-    private static final String BASE_ENDPOINT = "https://smartcap-cloned-abhibroto0402.c9users.io/";
+    private static final String BASE_ENDPOINT = "http://ec2-52-33-82-105.us-west-2.compute.amazonaws.com/";
 
     public static String getPatientEndpoint(String email){
         return PATIENT_ENDPOINT+email;

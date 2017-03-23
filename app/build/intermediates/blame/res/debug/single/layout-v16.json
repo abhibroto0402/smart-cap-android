@@ -1,6 +1,6 @@
 [
     {
-        "merged": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
-        "source": "/Users/amukherjee/Documents/smartcap_app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout-v16/notification_template_custom_big.xml"
+        "merged": "/Users/amukherjee/smartcap_app/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/res/layout-v16/notification_template_custom_big.xml"
     }
 ]
