@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -39,7 +38,7 @@ import java.util.Date;
 public class HomeActivity extends AppCompatActivity {
 
     private ImageButton _refresh;
-    private String jsonBody, emailId, user_json, med_taken_times, tempAlert, humdityAlert;
+    private String jsonBody, emailId, user_json, med_taken_times, tempAlert, humdityAlert, drugName,pswd;
     private ImageButton _addPrescription;
     private ImageButton _temperature, _humidity;
     private ListView _mListView;
@@ -50,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
     private Button logout;
     private CheckedTextView checkText;
     private static String email;
+    private String result = "blank";
+    private String jsonData = "Testing";
 
     @Override
     protected void onResume(){
@@ -83,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
         med_taken_times= extras.getString("mtimes");
         humdityAlert= extras.getString("halert");
         tempAlert= extras.getString("talert");
+        pswd = extras.getString("pswd");
         new GetUserData().execute(ServerUtil.getPatientEndpoint(emailId));
         try {
             if (jsonBody.contains(med_taken_times+"X")) {
@@ -102,9 +104,10 @@ public class HomeActivity extends AppCompatActivity {
             _mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    drugName = ds[i].getListData("drug_name");
                     AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
                     alertDialog.setTitle("Update");
-                    alertDialog.setMessage(ds[i].getListData("drug_name"));
+                    alertDialog.setMessage(drugName);
                     alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Took",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
@@ -121,6 +124,12 @@ public class HomeActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     new RemoveUserData().execute(ServerUtil.getBaseEndpoint());
+                                    new AuthenticationLogin().execute(ServerUtil.getUsersEndpoint(emailId, pswd));
+                                    Intent login = new Intent(HomeActivity.this,LoginActivity.class);
+                                    login.putExtra("load","true");
+                                    login.putExtra("emailId", emailId);
+                                    login.putExtra("pswd",pswd);
+                                    startActivity(login);
                                 }
                             });
                     alertDialog.show();
@@ -233,8 +242,6 @@ public class HomeActivity extends AppCompatActivity {
                     jsonBody = null;
                     return "";
                 }
-
-
             } catch (Exception e) {
                 return "";
             }
@@ -244,7 +251,6 @@ public class HomeActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
         }
-
     }
 
     private class RemoveUserData extends AsyncTask<String, String, String> {
@@ -253,7 +259,7 @@ public class HomeActivity extends AppCompatActivity {
         protected String doInBackground(String... urls) {
             StringBuilder info = new StringBuilder();
             try {
-                URL url = new URL(urls[0]+"remove/"+emailId);
+                URL url = new URL(urls[0]+"remove/"+emailId+"/"+drugName);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
                 conn.connect();
@@ -271,7 +277,6 @@ public class HomeActivity extends AppCompatActivity {
                     jsonBody = null;
                     return "";
                 }
-
             } catch (Exception e) {
                 return "";
             }
@@ -311,7 +316,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void getEvents(URL url){
-
         StringBuilder result = new StringBuilder();
         JSONObject parent;
         try {
@@ -328,8 +332,6 @@ public class HomeActivity extends AppCompatActivity {
             med_taken_times= parent.getJSONObject("Event").getString("open_cap_event_times");
             tempAlert=  parent.getJSONObject("Event").getString("temp_alert");
             humdityAlert= parent.getJSONObject("Event").getString("humidity_alert");
-
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (ProtocolException e) {
@@ -338,6 +340,88 @@ public class HomeActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+    }
+
+    public class AuthenticationLogin extends AsyncTask<String, String, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            StringBuilder result = new StringBuilder();
+            StringBuilder info = new StringBuilder();
+            try {
+                URL url = new URL(urls[0]);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.connect();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    result.append(line);
+                }
+                user_json= result.toString();
+                rd.close();
+                if (conn.getResponseCode() == 200) {
+                    url = new URL(ServerUtil.getPatientEndpoint(emailId));
+                    conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.connect();
+                    rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    while ((line = rd.readLine()) != null) {
+                        info.append(line);
+                    }
+                    rd.close();
+                    jsonData = info.toString();
+                    getEvents(new URL(ServerUtil.getBaseEndpoint()+"event/"+emailId));
+                    return "200";
+                } else
+                    return user_json;
+            } catch (Exception e) {
+                return e.getMessage();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            try {
+                if (result == "blank" || s == "200")
+                    result = "Login Successful";
+                else
+                    result = "Login Failure. Try again" + user_json;
+            } catch (NullPointerException e) {
+                result = "Login Failed";
+            }
+        }
+        private void getEvents(URL url){
+
+            StringBuilder result = new StringBuilder();
+            JSONObject parent;
+            try {
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.connect();
+                BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    result.append(line);
+                }
+                rd.close();
+                parent = new JSONObject(result.toString());
+                med_taken_times= parent.getJSONObject("Event").getString("open_cap_event_times");
+                tempAlert=  parent.getJSONObject("Event").getString("temp_alert");
+                humdityAlert= parent.getJSONObject("Event").getString("humidity_alert");
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 

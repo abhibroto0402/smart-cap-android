@@ -40,6 +40,26 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        final Bundle extras = getIntent().getExtras();
+        try {
+            if (Boolean.parseBoolean(extras.getString("load"))) {
+                emailId = extras.getString("emailId");
+                pswd = extras.getString("pswd");
+                new AuthenticationLogin().execute(ServerUtil.getUsersEndpoint(emailId, pswd));
+                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                i.putExtra("jsonData", jsonData);
+                i.putExtra("emailId", emailId);
+                i.putExtra("user_json", user_json);
+                i.putExtra("mtimes", med_taken_times);
+                i.putExtra("talert", tempAlert);
+                i.putExtra("halert", humdityAlert);
+                i.putExtra("pswd", pswd);
+                startActivity(i);
+                finish();
+            }
+        }catch (NullPointerException e){
+
+        }
 
         //Initialization of all elements
         _signupLink = (TextView) findViewById(R.id.link_signup);
@@ -83,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                         i.putExtra("mtimes", med_taken_times);
                         i.putExtra("talert", tempAlert);
                         i.putExtra("halert", humdityAlert);
+                        i.putExtra("pswd",pswd);
                         startActivity(i);
                         finish();
                     }
