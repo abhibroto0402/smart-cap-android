@@ -3,21 +3,39 @@
 
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/e8d12923e9154388e137724031230e91b045d7cc/output/jars/classes.jar"
+        jar="/Users/amukherjee/.android/build-cache/2693b90d761faeb38f027627777783445eb33976/output/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5eb1c04c3c3d2c4ae0352b4d72adb6b1d72e4f69/classes.dex" />
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_a9267f83109c67770fcf52122ef5ed0689516fc5/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/239843745d941f539581dd70684f447432a9daba/output/jars/classes.jar"
+        jar="/Users/amukherjee/.android/build-cache/93ec812ea7da5d5dd825e7bb5acff36ce5133006/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_25ffe92553a1e33e06bab142c0c687716b0ae050/classes.dex" />
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_34387ffd01358bb3fefcb8b9561b6c48e08db21b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/2693b90d761faeb38f027627777783445eb33976/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cb1653472e31a078c8e2081086cd779fafffe7fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/9f976dff3dcd48943e55b3fc125fff440cfa5a1b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_df3dc7870b0aef49088b828f75d830ed22b1dba7/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -25,8 +43,62 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_78b85c47d9544598dde9763738ba780615b55fc8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/2bd6fbc6e6e18ac55c0d15a27f5d1b0a461ec796/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_1e7f939686263389afc7cae3f4c88b54078f0d2c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/61009ebca059b22f2af28bbd54df501bf11072e3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5cd98f05c1d377599a4e9e3867f3b56ba942e4ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/7c21477aa9dab61a1ab6261a05e27e14f3fd27f4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c584d421e530cf87a57165b7da1e407c9a8b9593/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/7cfa3f805ca9c1250ecb4caba2eefe018e89f914/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1902291aa8b4a8d2102dd15d7c4b15cf48446397/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/61009ebca059b22f2af28bbd54df501bf11072e3/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_bfee74813689c94bb1996f00f1c1910ab52db5b9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/amukherjee/.android/build-cache/2bd6fbc6e6e18ac55c0d15a27f5d1b0a461ec796/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f0c08c5f1a1dd68b35cdaca5d7751ff20b20855a/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -34,125 +106,44 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="e4fba88ed8f31325415597821421cd960333106d">
+        sha1="e94b62739f94342878f2c4bbfc3645b01a98043a">
         <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_231d5104b5d5469fab99a8e8cd77d0835d227eb9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/2891a92c7b88e7baf3fd805cb1dc625982deb825/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e9c4f5c4bdba816a96739071c5f992eeb28df781/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/a5c81a1becc6c9fb92e11725eb796c8f82b04506/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3a040f31c35e3e046ee0b05bbaec1eca172181c2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/12b76af7c47a9645ae2945080540a2a154aafee0/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3cf6d60d6773b40130a8b8c113c53db695aaed02/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/e8d12923e9154388e137724031230e91b045d7cc/output/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c9d85a907ef08868e3aa2bd17de5b91abebb01f8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/9c38a61da2c862f3911b87e590044302371225ec/output/jars/classes.jar"
+        jar="/Users/amukherjee/.android/build-cache/702392888b06329f846daf9cba6060b5a7ec4e6e/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b969b4dbdcf2288ad23371be98b361ebb8bfac76/classes.dex" />
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_449d755ca644501cf533158280db23f5ef6d17c4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/6728dcda285959bbd150c49427c95950d7042aff/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_706b7710c96e5ca4465b4268010e4f8cc29e6c80/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/d997c212c909d1bea5a9c9411e949d9340cdbd15/output/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_25da3e007bdd83045996e8e1492dd938eea3fb86/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/d997c212c909d1bea5a9c9411e949d9340cdbd15/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17a04ef0d0ad6cecc99cfe855a9b9ede74983dc2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/2891a92c7b88e7baf3fd805cb1dc625982deb825/output/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_ffd3be53876f9528e66ef31f82811021faf5d84f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/6be778e1bdeba387f6e59cc78e722bc626ec2fc4/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_41723d5656056f0bbd8694bfebba395ea3f4f817/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/239843745d941f539581dd70684f447432a9daba/output/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/amukherjee/.android/build-cache/93ec812ea7da5d5dd825e7bb5acff36ce5133006/output/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_f2cf454b033310e57970f483df5fd4e1ceb68b54/classes.dex" />
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_2085f0b6442686498218233f346ee52eebf55c29/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/.android/build-cache/a5c81a1becc6c9fb92e11725eb796c8f82b04506/output/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/amukherjee/.android/build-cache/b63fd8560d1d261464a5885c0ca89e570c86fe22/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_1ecd29d1177bedee2af6130049130f3a52f17953/classes.dex" />
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5dc87576aafe2706f34f887923d56def6fa607a1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/amukherjee/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jar="/Users/amukherjee/.android/build-cache/7c21477aa9dab61a1ab6261a05e27e14f3fd27f4/output/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_12420114017f48f0fe9490d6bee0b3f8d410a5ad/classes.dex" />
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/amukherjee/smartcap_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_4b299a5059f68e16b90c099b84bbfd357927d80b/classes.dex" />
     </item>
 
 </items>

@@ -106,9 +106,9 @@ public class HomeActivity extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     drugName = ds[i].getListData("drug_name");
                     AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
-                    alertDialog.setTitle("Update");
+                    alertDialog.setTitle("          Update Activity");
                     alertDialog.setMessage(drugName);
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Took",
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Took Medication",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
